@@ -1,6 +1,6 @@
 # Multiviewer for 3D volumes
 
-This is a Python class for plotting one or more numpy volumes in multiple windows wrapped in a single view based oon mayavi.
+This is a Python class for plotting one or more numpy volumes in multiple windows wrapped into a single view based on mayavi.
 
 ## Installation
 
