@@ -1,6 +1,6 @@
 # Multiviewer for 3D volumes
 
-This is a simple Python class for plotting one or more numpy volumes in multiple windows wrapped in a single view using mayavi.
+This is a Python class for plotting one or more numpy volumes in multiple windows wrapped in a single view based oon mayavi.
 
 ## Installation
 
@@ -12,41 +12,41 @@ pip install PyQt5
 ```
 
 ## Usage
-you can plot numpy volumes by passing several list of volumes to the class and then use the show method.
-each list is treated as a new sub-window. the following example will plot volume_1 and volume_2 in two separate windows as shown below.
+You can plot numpy volumes by passing several list of volumes to the class; each list corresponds to an independent subwindow in the view.
+The following example will plot volume_1 and volume_2 in two separate windows as shown below.
 
 ```python
 MultiView([volume_1], [volume_2]).show()
 ```
 
 
-![alt text](https://ibin.co/w800/5gD6BbsA6DdV.png)
+![alt text](https://ibin.co/w800/5gI1F9e7G8Ar.png)
 
-you can plot as many volumes as you want by adding more and more lists.
-View will be just splittend in more sub-windows:
+you can create as many windows as you want by adding more and more lists:
 
 ```python
 MultiView([volume_1], [volume_2], [volume_n]).show()
 ```
 
-![alt text](https://ibin.co/w800/5gD6OPWyUVm9.png)
+![alt text](https://ibin.co/w800/5gI1HxrbymVV.png)
 
 
-you can also put more than a volume in a list and all those volumes will be plotted in the same window.
-The following example plots three volumes in the first windows.
+you can plot more volumes in a window by simply adding them to a list.
+The following example plots two volumes in the first windows but you could provide with how many you want, they'll just overlap each other.
 
 ```python
-MultiView([volume_1a, volume_1b, volume_1c]]).show()
+MultiView([volume_1a, volume_1b]]).show()
 ```
 
-![alt text](https://ibin.co/5gDALoXa3Pqo.png)
+![alt text](https://ibin.co/w800/5gI1OWN6KIsr.png)
 
 ## dealing with opacity
 
-furthermore, it is possible to specify the opacity of a volume. this is useful when overlapped volumes result in a fuzzy view. just pass a tuple (volume, opacity) instead of a volume directly.
+when plotting more than a volume in a window the overlapped volumes can result in a fuzzy view.
+it is possible to specify the opacity of a single volume by just passing a tuple (volume, opacity) instead of the volume directly.
 
 ```python
-MultiView([(big_one, 0.4), detail, detail_2], [volume_2]]).show()
+MultiView([(big_one, 0.4), sphere], [volume_2]]).show()
 ```
 
-![alt text](https://ibin.co/w800/5gD6ULK8EYWT.png)
+![alt text](https://ibin.co/w800/5gI1Z8WkbR7R.png)
