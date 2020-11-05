@@ -1,6 +1,6 @@
 # Multiviewer for 3D volumes
 
-This is a Python class for plotting one or more numpy volumes in multiple windows wrapped into a single view based on mayavi.
+This is a Python class for plotting one or more numpy volumes in multiple windows wrapped into a single view (based on mayavi).
 
 ## Installation
 
@@ -35,15 +35,15 @@ you can plot more volumes in a window by simply adding them to a list.
 The following example plots two volumes in the first windows but you could provide with how many you want, they'll just overlap each other.
 
 ```python
-MultiView([volume_1a, volume_1b]]).show()
+MultiView([volume_1, sphere], [volume_2]).show()
 ```
 
 ![alt text](https://ibin.co/w800/5gI1OWN6KIsr.png)
 
 ## dealing with opacity
 
-when plotting more than a volume in a window the overlapped volumes can result in a fuzzy view.
-it is possible to specify the opacity of a single volume by just passing a tuple (volume, opacity) instead of the volume directly.
+when plotting more than one volume in a window the overlapped volumes can result in a fuzzy view.
+it is possible to specify the opacity of a volume by just passing a tuple (volume, opacity) instead of the volume directly as show below.
 
 ```python
 MultiView([(big_one, 0.4), sphere], [volume_2]]).show()
